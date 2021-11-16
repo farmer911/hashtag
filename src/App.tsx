@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ReactHashtag from "./components/HashTag/hashtag";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <ReactHashtag>Hi, my name is @Harry. Senior Intern</ReactHashtag>
+      <div>
+        <ReactHashtag
+          renderHashtag={(value: string) => {
+            return (
+              <span key={"hashtag" + value} className="css-custom">
+                {value}
+              </span>
+            );
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          @Harry custom witch css or SCSS
+        </ReactHashtag>
+      </div>
     </div>
   );
 }
